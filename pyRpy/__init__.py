@@ -55,7 +55,7 @@ def dbinom(x, size=1, prob=0.5, log=False):
     qbinom(p, size, prob, lower.tail = TRUE, log.p = FALSE)
     rbinom(n=1, size=1, prob=0.5)
 
-    :param x:       int. The number of successes
+    :param x:       int. or array of ints. The number of successes
     :param size:    int. Number of trials
     :param prob:    float. Probability of a success
     :param log:     bool. take the log?
