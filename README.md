@@ -1,14 +1,16 @@
-# pyRpy
-* auto-gen TOC:
-{:toc}
-
-## Introduction
+---
+output:
+  html_document:
+    number_sections: yes
+    toc: yes
+---
+# Introduction
 **Do you enjoy the ease and power with which you can create general purpose
-programs in python? **
+programs in python?**
 
 - yes
 
-**But do you prefer the ease with which you can perform statistical analyses in R? **
+**But do you prefer the ease with which you can perform statistical analyses in R?**
 
 - yes
 
@@ -39,18 +41,19 @@ paste large chunks of your existing R code, and make only some minor
 modifications.
 
 
-## Development Notes
+# Development Notes
 This is a very new project, and only has one person working on it at the moment
 based on functions that are most used by the developer. Please see the "Help Us"
 subsection for ways in which you can contribute to the project.
 
 Here is a list of functions that have been implemented so far:
+
     rbinom()
     dbinom()
     qbinom()
     pbinom()
 
-## Help Us!
+# Help Us!
 You can contribute by:
 - Cloning this repository, writing new code and merging with the master branch.
 - Creating code snippets, and sending them to us, and we will add them to the
