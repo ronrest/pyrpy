@@ -18,9 +18,9 @@ def rbinom(n=1, size=1, prob=0.5):
     of trials of size "size".
 
     USAGE:
-    dbinom(x, size, prob=0.5, log=FALSE)
-    pbinom(q, size, prob, lower.tail = TRUE, log.p = FALSE)
-    qbinom(p, size, prob, lower.tail = TRUE, log.p = FALSE)
+    dbinom(x, size, prob=0.5, log=False)
+    pbinom(q, size, prob=0.5, lower.tail=True, log.p=False)
+    qbinom(p, size, prob=0.5, lower.tail=True, log.p=False)
     rbinom(n=1, size=1, prob=0.5)
 
     :param n:     int. size of the array
@@ -50,9 +50,9 @@ def dbinom(x, size=1, prob=0.5, log=False):
     trials, given a probability of "prob" for each success.
 
     USAGE:
-    dbinom(x, size, prob=0.5, log=FALSE)
-    pbinom(q, size, prob, lower.tail = TRUE, log.p = FALSE)
-    qbinom(p, size, prob, lower.tail = TRUE, log.p = FALSE)
+    dbinom(x, size, prob=0.5, log=False)
+    pbinom(q, size, prob=0.5, lower.tail=True, log.p=False)
+    qbinom(p, size, prob=0.5, lower.tail=True, log.p=False)
     rbinom(n=1, size=1, prob=0.5)
 
     :param x:       int. or array of ints. The number of successes
