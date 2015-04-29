@@ -100,6 +100,43 @@ def qbinom(q, size, prob=0.5, lowertail=True):
         return binom.isf(q=q, n=size, p=prob)
 
 
+def pbinom(x, size=1, prob=0.5, lowertail=True, log=False):
+    """
+    ============================================================================
+                                                                        pbinom()
+    ============================================================================
+    The cumulative distribution function for the binomial distribution.
+    You provide a value along the binomial distribution (eg x=3) or array of
+    values, and it returns what proportion of values lie below it (the quantile)
+
+    Alternatively, if you select lowertail=False, it returns the proportion of
+    values that are above it.
+
+    USAGE:
+    dbinom(x, size, prob=0.5, log=False)
+    pbinom(x, size, prob=0.5, lowertail=True, log=False)
+    qbinom(q, size, prob=0.5, lowertail=True)
+    rbinom(n=1, size=1, prob=0.5)
+
+    :param x:       int. or array of ints. The values along the distribution.
+    :param size:    int. Number of trials
+    :param prob:    float. Probability of a success
+    :param lowertail bool. are you interested in what proportion of values lie
+                     beneath x?
+    :param log:     bool. take the log?
+    :return:        an array of quantiles() corresponding to the values in x
+    ============================================================================
+    """
+    if lowertail and not log:
+        return binom.cdf(x, n=size, p=prob)
+    elif not lowertail and not log:
+        return binom.sf(x, n=size, p=prob)
+    elif lowertail and log:
+        return binom.logcdf(x, n=size, p=prob)
+    else:
+        return binom.logsf(x, n=size, p=prob)
+
+
 
 
 if __name__ == '__main__':
