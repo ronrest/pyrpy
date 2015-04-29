@@ -71,7 +71,7 @@ def dbinom(x, size=1, prob=0.5, log=False):
 
 
 
-def qbinom(q, size=1, prob=0.5, lowertail=True, log=False)
+def qbinom(q, size=1, prob=0.5, lowertail=True, log=False):
     """
     ============================================================================
                                                                         qbinom()
