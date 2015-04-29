@@ -1,9 +1,3 @@
----
-output:
-  html_document:
-    number_sections: yes
-    toc: yes
----
 # Introduction
 **Do you enjoy the ease and power with which you can create general purpose
 programs in python?**
