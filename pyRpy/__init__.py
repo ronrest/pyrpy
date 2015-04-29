@@ -19,8 +19,8 @@ def rbinom(n=1, size=1, prob=0.5):
 
     USAGE:
     dbinom(x, size, prob=0.5, log=False)
-    pbinom(q, size, prob=0.5, lower.tail=True, log.p=False)
-    qbinom(p, size, prob=0.5, lower.tail=True, log.p=False)
+    pbinom(q, size, prob=0.5, lowertail=True, log=False)
+    qbinom(p, size, prob=0.5, lowertail=True, log=False)
     rbinom(n=1, size=1, prob=0.5)
 
     :param n:     int. size of the array
@@ -51,8 +51,8 @@ def dbinom(x, size=1, prob=0.5, log=False):
 
     USAGE:
     dbinom(x, size, prob=0.5, log=False)
-    pbinom(q, size, prob=0.5, lower.tail=True, log.p=False)
-    qbinom(p, size, prob=0.5, lower.tail=True, log.p=False)
+    pbinom(q, size, prob=0.5, lowertail=True, log=False)
+    qbinom(p, size, prob=0.5, lowertail=True, log=False)
     rbinom(n=1, size=1, prob=0.5)
 
     :param x:       int. or array of ints. The number of successes
