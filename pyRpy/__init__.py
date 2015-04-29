@@ -70,8 +70,7 @@ def dbinom(x, size=1, prob=0.5, log=False):
         return binom.pmf(x, n=size, p=prob)
 
 
-
-def qbinom(q, size=1, prob=0.5, lowertail=True, log=False):
+def qbinom(q, size, prob=0.5, lowertail=True):
     """
     ============================================================================
                                                                         qbinom()
@@ -83,7 +82,7 @@ def qbinom(q, size=1, prob=0.5, lowertail=True, log=False):
     USAGE:
     dbinom(x, size, prob=0.5, log=False)
     pbinom(q, size, prob=0.5, lowertail=True, log=False)
-    qbinom(p, size, prob=0.5, lowertail=True, log=False)
+    qbinom(p, size, prob=0.5, lowertail=True)
     rbinom(n=1, size=1, prob=0.5)
 
     :param q:       float. or array of floats. The quantile ()
@@ -95,14 +94,10 @@ def qbinom(q, size=1, prob=0.5, lowertail=True, log=False):
     """
     # TODO: check that q is between 0.0 and 1.0
 
-    if lowertail and not log:
-        return binom.cdf(x=q, n=size, p=prob)
-    elif not lowertail and not log:
-        return binom.sf(x=q, n=size, p=prob)
-    elif lowertail and log:
-        binom.logcdf(x=q, n=size, p=prob)
+    if lowertail:
+        return binom.ppf(q=q, n=size, p=prob)
     else:
-        binom.logsf(x=q, n=size, p=prob)
+        return binom.isf(q=q, n=size, p=prob)
 
 
 
