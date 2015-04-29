@@ -71,6 +71,42 @@ def dbinom(x, size=1, prob=0.5, log=False):
 
 
 
+def qbinom(q, size=1, prob=0.5, lowertail=True, log=False)
+    """
+    ============================================================================
+                                                                        qbinom()
+    ============================================================================
+    The quantile function for the binomial distribution.
+    You provide a quantile (eg q=0.75) or array of quantiles, and it returns the
+    value along the binomial distribution that corresponds to the qth quantile.
+
+    USAGE:
+    dbinom(x, size, prob=0.5, log=False)
+    pbinom(q, size, prob=0.5, lowertail=True, log=False)
+    qbinom(p, size, prob=0.5, lowertail=True, log=False)
+    rbinom(n=1, size=1, prob=0.5)
+
+    :param q:       float. or array of floats. The quantile ()
+    :param size:    int. Number of trials
+    :param prob:    float. Probability of a success
+    :param log:     bool. take the log?
+    :return:        an array of the value(s) corresponding to the quantiles q
+    ============================================================================
+    """
+    # TODO: check that q is between 0.0 and 1.0
+
+    if lowertail and not log:
+        return binom.cdf(x=q, n=size, p=prob)
+    elif not lowertail and not log:
+        return binom.sf(x=q, n=size, p=prob)
+    elif lowertail and log:
+        binom.logcdf(x=q, n=size, p=prob)
+    else:
+        binom.logsf(x=q, n=size, p=prob)
+
+
+
+
 if __name__ == '__main__':
     print("Ahoy a Hoy!")
 
