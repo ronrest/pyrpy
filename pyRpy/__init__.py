@@ -4,11 +4,12 @@
 ################################################################################
 """
 __author__ = 'Ronny Restrepo'
+import numpy as np
 
 def sort(x, decreasing=False, nalast=None):
     """
     ============================================================================
-                                                                          SORT()
+                                                                            SORT
     ============================================================================
     Sorts an array or list of items.
 
@@ -23,6 +24,24 @@ def sort(x, decreasing=False, nalast=None):
     # TODO: implement nalast option
     return sorted(x, reverse=decreasing)
 
+
+def c(*args):
+    """
+    ============================================================================
+                                                                               C
+    ============================================================================
+    Creates an array (vector)
+    NOTE: Do not try concatenating arrays using this. That feature has not been
+    implemented yet. You will end up with a multidimensional array if you do.
+
+    :param args: The elements of your array
+    :return: An array
+    ============================================================================
+    """
+    # TODO: implement concatenation of arrays in c()
+    return np.array(args)
+
+# TODO: use np.array() on sort() to make it return an array not a list
 
 
 if __name__ == '__main__':
