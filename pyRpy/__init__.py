@@ -22,7 +22,7 @@ def sort(x, decreasing=False, nalast=None):
     ============================================================================
     """
     # TODO: implement nalast option
-    return sorted(x, reverse=decreasing)
+    return c(sorted(x, reverse=decreasing))
 
 
 def c(*args):
@@ -40,8 +40,6 @@ def c(*args):
     """
     # TODO: implement concatenation of arrays in c()
     return np.array(args)
-
-# TODO: use np.array() on sort() to make it return an array not a list
 
 
 if __name__ == '__main__':
