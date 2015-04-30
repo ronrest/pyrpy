@@ -111,6 +111,9 @@ def plot_distribution(dist="normal", mean=None, sd=None, n=None, p=None,
                 alpha=0.5,
                 color='b', edgecolor="#FF0000",
                 align="center")
+        plt.xticks(x)               # only show tick labels for actual values
+        plt.xlim([-0.5, n + 0.5])   # xlimits to fit entire plot snugly
+
         plt.xlabel('Number of Successes out of {} trials'.format(n))
         plt.ylabel('probability')
         plt.title(title)
