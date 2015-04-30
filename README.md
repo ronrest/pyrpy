@@ -46,6 +46,16 @@ Here is a list of functions that have been implemented so far:
     dbinom()
     qbinom()
     pbinom()
+    sort() * 
+    c() **
+
+\* Refers to functions that have only been partially implemented. There may be 
+arguments missing (See the docstrings for those functions to see what has and 
+has not been implemented).
+
+** Refers to functions that do not quite behave 100% the way you would expect 
+the equivalent function in R to behave (See the docstrings for those functions 
+to see what behaviour is different).
 
 # Help Us!
 You can contribute by:
