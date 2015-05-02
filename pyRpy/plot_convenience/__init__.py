@@ -7,6 +7,13 @@ __author__ = 'Ronny Restrepo'
 from pyRpy.distributions import *
 import matplotlib.pyplot as plt
 
+# TODO: Create another function to show a normal curve/t curve of two samples
+#       on top of each other, along with confidence intervals, just so we can
+#       visually see the hypothesis test in action. If the null hypothesis was
+#       rejected, then we can see by how much of a difference there is. 
+
+
+
 def plot_distribution(dist="normal", mean=None, sd=None, n=None, p=None, 
                       df=None, df2=None, rate=None, res=100, returndf=False, 
                       primary=True, plower=0.0001, pupper=0.9999):
@@ -61,6 +68,7 @@ def plot_distribution(dist="normal", mean=None, sd=None, n=None, p=None,
     ...       : other parameters to pass onto the plot
     ===========================================================================
     """
+    # TODO: implement shading of confidence intervals
     # TODO: implement other distributiuons
     # TODO: Check the data types of the inputs
     # TODO: Add option to draw exponential distribution using either lambda OR 
