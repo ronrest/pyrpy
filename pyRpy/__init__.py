@@ -5,6 +5,9 @@
 """
 __author__ = 'Ronny Restrepo'
 import numpy as np
+from scipy.misc import comb
+from scipy.misc import factorial as spfactorial
+
 
 def sort(x, decreasing=False, nalast=None):
     """
@@ -41,6 +44,70 @@ def c(*args):
     # TODO: implement concatenation of arrays in c()
     return np.array(args)
 
+
+# Permutations and Combinations
+def nck(n, k, exact=False):
+    """
+    ============================================================================
+                                                                             NCK
+    ============================================================================
+    n choose k
+
+    :param n (int):
+    :param k (int):
+    :param exact (bool):
+    :return (int, long): integer for smaller numbers, Long for larger numbers
+    ============================================================================
+    """
+    return(int(round(comb(n, k, exact=exact))))
+
+def choose(n, k, exact=False):
+    """
+    ============================================================================
+                                                                          CHOOSE
+    ============================================================================
+    n choose k
+
+    :param n (int):
+    :param k (int):
+    :param exact (bool):
+    :return (int, long): integer for smaller numbers, Long for larger numbers
+    ============================================================================
+    """
+    return(int(round(comb(n, k, exact=exact))))
+
+
+def npk(n, k, exact=False):
+    """
+    ============================================================================
+                                                                             NPK
+    ============================================================================
+    n perm k. Permutations
+
+    :param n (int):
+    :param k (int):
+    :param exact (bool):
+    :return (int, long): integer for smaller numbers, Long for larger numbers
+    ============================================================================
+    """
+    return(int(round(nck(n, k, exact=exact) * factorial(k, exact))))
+
+
+def factorial(n, exact=False):
+    """
+    ============================================================================
+                                                                       FACTORIAL
+    ============================================================================
+    factorial
+    :param n:
+    :param exact:
+    :return (int, long): integer for smaller numbers, Long for larger numbers
+    ============================================================================
+    """
+    return(int(round(spfactorial(n, exact))))
+
+
+# TODO: make sqrt() automatically load up by implementing a call to math.sqrt()
 
 if __name__ == '__main__':
     print("Ahoy a Hoy!")
