@@ -7,7 +7,6 @@ __author__ = 'Ronny Restrepo'
 
 from scipy.stats import binom
 
-
 def cbinom(size=1, prob=0.5, type="equal", conf=0.95):
     """
     ============================================================================
@@ -116,7 +115,7 @@ def dbinom(x, size=1, prob=0.5, log=False):
         return binom.pmf(x, n=size, p=prob)
 
 
-def qbinom(q, size, prob=0.5, lowertail=True):
+def qbinom(q, size=1, prob=0.5, lowertail=True):
     """
     ============================================================================
                                                                         qbinom()
