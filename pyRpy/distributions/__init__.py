@@ -21,6 +21,7 @@ def cbinom(size=1, prob=0.5, type="equal", conf=0.95):
            "equal" (Default) for two tailed test
            "less" for one-tailed test where alternative hypotheis is 'less than'
            "more" for one-tailed test where alternative hypotheis is 'more than'
+           "greater" same as "more"
     :param conf (float): confidence interval used
     :return: a list with two values representing the lower and upper points that
              fit within your confidence interval.
@@ -37,7 +38,7 @@ def cbinom(size=1, prob=0.5, type="equal", conf=0.95):
     if (type == "less"):
         p_lower = alpha
         p_upper = 1.0
-    elif (type == "more"):
+    elif (type == "more") or (type == "greater"):
         p_lower = 0.0
         p_upper = conf
     elif (type == "equal"):
