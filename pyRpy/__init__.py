@@ -95,6 +95,11 @@ def _template(x, arg2, arg3):
     tmean : float
         Description of output.
 
+    Notes
+    ----------------------------------------------------------------------------
+    `template` behaves in such and such away that you should be aware of in such
+     and such circumstances. Just to let you know.
+
     Examples
     ----------------------------------------------------------------------------
     >>> from pyRpy import *
