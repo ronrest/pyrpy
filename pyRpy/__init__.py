@@ -80,7 +80,7 @@ def _template(x, arg2, arg3):
     Detailed description here. Can be several sentences or paragraphs long.
 
     Parameters
-    ----------
+    ----------------------------------------------------------------------------
     x : array_like
         Array of values.
     arg2 : None or int, optional
@@ -91,24 +91,27 @@ def _template(x, arg2, arg3):
         determine the lower or upper limits. The default value is (0, 100).
 
     Returns
-    -------
+    ----------------------------------------------------------------------------
     tmean : float
         Description of output.
 
     Examples
-    --------
+    ----------------------------------------------------------------------------
     >>> from pyRpy import *
     >>> template([1,2,3,4], arg2=4, arg3=(2,5))
     some out put here
 
     See Also
-    --------
+    ----------------------------------------------------------------------------
     median: Median
     mode: Mode
     """
     pass
 
 
+# ==============================================================================
+#                                                                           MEAN
+# ==============================================================================
 def mean(x, trim=0, na_rm=False):
     """
     Compute the trimmed mean.
@@ -116,7 +119,7 @@ def mean(x, trim=0, na_rm=False):
     outside the given `limits`.
 
     Parameters
-    ----------
+    ----------------------------------------------------------------------------
     x : array_like
         Array of values.
     trim: int, optional
@@ -132,17 +135,18 @@ def mean(x, trim=0, na_rm=False):
         Default is False
 
     Returns
-    -------
+    ----------------------------------------------------------------------------
     mean : float
         The arithmetic mean
+
     Examples
-    --------
+    ----------------------------------------------------------------------------
     >>> from pyRpy import *
     >>> mean(c(5, 10, 6, 9, 7, 8))
     7.5
 
     See Also
-    --------
+    ----------------------------------------------------------------------------
     median: Median
     mode: Mode
     """
