@@ -32,7 +32,8 @@ def cbinom(size=1, prob=0.5, type="equal", conf=0.95):
     cbinom(size=30, p=0.4, type="more", conf=0.90)
     ============================================================================
     """
-
+    # TODO: add  option to use "greater", "higher", ">" , "<", "=" as values to
+    #       the type argument.
     # Account for the different types of cutoff quantiles
     alpha = 1 - conf
     if (type == "less"):
