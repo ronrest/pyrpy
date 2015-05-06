@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 # TODO: Create another function to show a normal curve/t curve of two samples
 #       on top of each other, along with confidence intervals, just so we can
 #       visually see the hypothesis test in action. If the null hypothesis was
-#       rejected, then we can see by how much of a difference there is. 
+#       rejected, then we can see by how much of a difference there is.
 
 
 

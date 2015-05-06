@@ -137,6 +137,7 @@ def qbinom(q, size=1, prob=0.5, lowertail=True):
     :return:        an array of the value(s) corresponding to the quantiles q
     ============================================================================
     """
+    # TODO: BUG: qbinom(0, size=11, prob=0.3) gives -1. It should be 0
     # TODO: check that q is between 0.0 and 1.0
 
     if lowertail:
