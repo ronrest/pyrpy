@@ -1,13 +1,73 @@
+# Copyright (c) Ronny Restrepo.  All rights reserved
+#
+# Disclaimer
+#
+# This software is provided "as-is".  There are no expressed or implied
+# warranties of any kind, including, but not limited to, the warranties
+# of merchantability and fitness for a given application.  In no event
+# shall Ronny Restrepo be liable for any direct, indirect, incidental,
+# special, exemplary or consequential damages (including, but not limited
+# to, loss of use, data or profits, or business interruption) however
+# caused and on any theory of liability, whether in contract, strict
+# liability or tort (including negligence or otherwise) arising in any way
+# out of the use of this software, even if advised of the possibility of
+# such damage.
+#
+
+
+
 """
 ################################################################################
                                                                            pyRpy
 ################################################################################
+
+Array Functions
+---------------
+    autosummary::
+   :toctree: generated/
+    c
+
+Sorting and Arranging
+---------------
+    autosummary::
+   :toctree: generated/
+    sort
+
+Central Tendency
+----------------
+.. autosummary::
+   :toctree: generated/
+    mean
+    mode
+    median
+
+Moments
+-------
+.. autosummary::
+   :toctree: generated/
+    skew
+    kurtosis
+
+
+Combinatorics
+-------
+.. autosummary::
+   :toctree: generated/
+    factorial
+    choose
+    nck
+    npk
+
 """
+from __future__ import division, print_function, absolute_import
+
 __author__ = 'Ronny Restrepo'
+
 import numpy as np
 from scipy.misc import comb
 from scipy.misc import factorial as spfactorial
 
+__all__ = ["mean", "sort", "c", "nck", "choose", "npk", "factorial"]
 
 def sort(x, decreasing=False, nalast=None):
     """
