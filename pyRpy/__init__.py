@@ -69,6 +69,47 @@ from scipy.misc import factorial as spfactorial
 
 __all__ = ["mean", "sort", "c", "nck", "choose", "npk", "factorial"]
 
+
+
+# ==============================================================================
+#                                                                       TEMPLATE
+# ==============================================================================
+def _template(x, arg2, arg3):
+    """
+    One sentence Description.
+
+    Detailed description here. Can be several sentences or paragraphs long.
+
+    Parameters
+    ----------
+    x : array_like
+        Array of values.
+    arg2 : None or int, optional
+        Description of arg2. When this value is None (default), then something
+        happens. If int, the something.
+    arg3 : (lower, upper), optional
+        A tuple consisting of the (lower flag, upper flag).  These flags
+        determine the lower or upper limits. The default value is (0, 100).
+
+    Returns
+    -------
+    tmean : float
+        Description of output.
+
+    Examples
+    --------
+    >>> from pyRpy import *
+    >>> template([1,2,3,4], arg2=4, arg3=(2,5))
+    some out put here
+
+    See Also
+    --------
+    median: Median
+    mode: Mode
+    """
+    pass
+
+
 def sort(x, decreasing=False, nalast=None):
     """
     ============================================================================
