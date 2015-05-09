@@ -74,7 +74,7 @@ has not been implemented).
 the equivalent function in R to behave (See the docstrings for those functions 
 to see what behaviour is different).
 
-+ refers to functions that are not core functions of R, but which have been 
+\+ refers to functions that are not core functions of R, but which have been 
 introduced as part of my R convenience packages ( https://github.com/ronrest/convenience_functions_R ).
 
 # Help Us!
