@@ -4,10 +4,11 @@
 =======================================================
 """
 __author__ = 'Ronny Restrepo'
+#import matplotlib.pyplot as plt
 
-import matplotlib.pyplot as plt
 from pyrpy.binom import dbinom
-from pyrpy.t import qt, dt
+from pyrpy.t import qt, dt, ct
+from pyrpy.shade_between import shade_between
 
 
 # TODO: Create another function to show a normal curve/t curve of two samples
@@ -17,8 +18,9 @@ from pyrpy.t import qt, dt
 
 
 
-def plot_distribution(dist="normal", mean=None, sd=None, n=None, p=None, 
-                      df=None, df2=None, rate=None, res=100, returndf=False, 
+def plot_distribution(dist="normal", mean=None, sd=None, n=None, p=None,
+                      df=None, df2=None, rate=None, conf=0.95, res=100,
+                      returndf=False,
                       primary=True, plower=0.0001, pupper=0.9999):
     """
     ===========================================================================
@@ -80,7 +82,7 @@ def plot_distribution(dist="normal", mean=None, sd=None, n=None, p=None,
     # TODO: currently the vertical line is plotting median not mean
     # TODO: implement show.mean option
 
-    from numpy import linspace
+    from numpy import linspace, array
 
     #-------------------------------------------------------------------------
     #                                               Handle Normal Distribution
@@ -113,15 +115,37 @@ def plot_distribution(dist="normal", mean=None, sd=None, n=None, p=None,
         x_min = x[0]
         x_max = x[-1]
 
-        title = "T Distribution with\n df={}".format(df)
-        plt.plot(x, y)
-        #plt.xticks(x)  # only show tick labels for actual values
-        plt.xlim([x_min, x_max])  # xlimits to fit entire plot snugly
+        # CONFIDENCE INTERVAL
+        if conf is not None:
+            assert isinstance(conf, float), \
+                "Argument *conf* in plot_distribution() must either be a \n"\
+                "'None' or a 'float'. Not a '{}'".format(type(conf))
+            CI = array(ct(df=df, type="equal", conf=conf)) * sd + mean
+            title = "t Distribution with\n df={} and confidence interval of "\
+                    "{}".format(df, conf)
+        else:
+            CI = [x[0], x[-1]]
+            title = "T Distribution with\n df={}".format(df)
 
-        plt.xlabel('values')
-        plt.ylabel('something')
-        plt.title(title)
-        plt.show()
+        shade_between(x, y, lower=CI[0], upper=CI[1],
+                      shade_col="blue", main=title)
+
+        #plt.plot(x, y)
+        # plt.xticks(x)  # only show tick labels for actual values
+        #plt.xlim([x_min, x_max])  # xlimits to fit entire plot snugly
+
+
+        #shade_between(x, y, lower=CI[1], upper=CI[2], primary=primary,
+        #                  type="l", shade.col = "green", main = title, ...)
+
+
+        # y2 = [0 if ((x[i] > ci_lower) and (x[i] < ci_upper))
+        #       else y[i]
+        #       for i in range(len(x))]
+        # plt.fill_between(x, y, y2, facecolor='blue', alpha=0.5)
+
+
+
 
 
     #-------------------------------------------------------------------------
@@ -173,3 +197,5 @@ def plot_distribution(dist="normal", mean=None, sd=None, n=None, p=None,
      
     else:
         pass
+
+
