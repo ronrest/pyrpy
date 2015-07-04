@@ -7,6 +7,8 @@ __author__ = 'Ronny Restrepo'
 
 import matplotlib.pyplot as plt
 from pyrpy.binom import dbinom
+from pyrpy.t import qt, dt
+
 
 # TODO: Create another function to show a normal curve/t curve of two samples
 #       on top of each other, along with confidence intervals, just so we can
@@ -67,7 +69,6 @@ def plot_distribution(dist="normal", mean=None, sd=None, n=None, p=None,
                 x axis to plot.
                 DEFAULT = 0.9999
     ...       : other parameters to pass onto the plot
-    ===========================================================================
     """
     # TODO: implement shading of confidence intervals
     # TODO: implement other distributiuons
@@ -78,6 +79,9 @@ def plot_distribution(dist="normal", mean=None, sd=None, n=None, p=None,
     #       those arguments is given.  
     # TODO: currently the vertical line is plotting median not mean
     # TODO: implement show.mean option
+
+    from numpy import linspace
+
     #-------------------------------------------------------------------------
     #                                               Handle Normal Distribution
     #-------------------------------------------------------------------------
@@ -88,8 +92,38 @@ def plot_distribution(dist="normal", mean=None, sd=None, n=None, p=None,
     #                                                    Handle t Distribution
     #-------------------------------------------------------------------------
     elif (dist=="t"):
-        pass
-     
+        # TODO: check the data types of the inputs
+        if df == None: df = 10
+
+        # Use mean and sd to shift and scale the t distribution to actual data.
+        if mean == None: mean=0
+        if sd == None: sd=1
+
+        # Calculate range of values to plot on x axis
+        x_min = qt(plower, df=df)
+        x_max = qt(pupper, df=df)
+
+        x = linspace(x_min, x_max, 100)
+
+        # Calculate corresponding y values
+        y = dt(x, df=df)
+
+        # Scale and shift the x axis
+        x = x*sd + mean
+        x_min = x[0]
+        x_max = x[-1]
+
+        title = "T Distribution with\n df={}".format(df)
+        plt.plot(x, y)
+        #plt.xticks(x)  # only show tick labels for actual values
+        plt.xlim([x_min, x_max])  # xlimits to fit entire plot snugly
+
+        plt.xlabel('values')
+        plt.ylabel('something')
+        plt.title(title)
+        plt.show()
+
+
     #-------------------------------------------------------------------------
     #                                                  Handle exp Distribution
     #-------------------------------------------------------------------------
