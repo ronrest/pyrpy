@@ -77,6 +77,7 @@ from pyrpy.t import ct, rt, qt, pt, dt
 
 # Plots
 from pyrpy.plot import plot
+from pyrpy.plot_density import plot_density
 from pyrpy.plot_distribution import plot_distribution
 
 import numpy as np
