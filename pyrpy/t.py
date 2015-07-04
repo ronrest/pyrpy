@@ -11,7 +11,7 @@ __all__ = ["ct", "rt", "dt", "qt", "pt"]
 # ==============================================================================
 #                                                                             CT
 # ==============================================================================
-def ct(df=0, loc=0, scale=1, type="equal", conf=0.95):
+def ct(df=1, loc=0, scale=1, type="equal", conf=0.95):
     """
     Confidence region for a t Distribution.
 
@@ -60,7 +60,6 @@ def ct(df=0, loc=0, scale=1, type="equal", conf=0.95):
     # calculate the cutoff points
     cutoff_lower = qt(p_lower, df=df, lowertail=True, loc=loc, scale=scale)
     cutoff_upper = qt(p_upper, df=df, lowertail=True, loc=loc, scale=scale)
-
     return [cutoff_lower, cutoff_upper]
 
 # ==============================================================================
@@ -179,7 +178,7 @@ def qt(q, df=1, loc=0, scale=1, ncp=None, lowertail=True, log=False):
     if log:
         raise NotImplementedError("Log option is not implemented yet.")
     elif lowertail:
-        return t.ppf(x=q, df=df, loc=loc, scale=scale)
+        return t.ppf(q=q, df=df, loc=loc, scale=scale)
     else:
         return t.isf(q=q, df=df, loc=loc, scale=scale)
 
