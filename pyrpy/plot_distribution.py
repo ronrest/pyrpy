@@ -4,9 +4,9 @@
 =======================================================
 """
 __author__ = 'Ronny Restrepo'
-from pyrpy.distributions import *
 
 import matplotlib.pyplot as plt
+from pyrpy.binom import dbinom
 
 # TODO: Create another function to show a normal curve/t curve of two samples
 #       on top of each other, along with confidence intervals, just so we can
