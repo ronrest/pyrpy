@@ -34,6 +34,17 @@ python. Your learning curve will not be as steep. You will be able to copy and
 paste large chunks of your existing R code, and make only some minor
 modifications.
 
+# Installing
+This project is very much in the early stages of development, and potentially 
+unstable, but if you wish to try it out, then run the following in a command line. 
+
+```
+pip install -e git+https://github.com/ronrest/pyrpy.git#egg=pyrpy
+```
+
+You may need to use `sudo` at the start if you are instlaling from a debian based linux distribution. 
+
+
 
 # Development Notes
 This is a very new project, and only has one person working on it at the moment
