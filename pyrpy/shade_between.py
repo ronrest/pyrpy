@@ -34,8 +34,17 @@ def shade_between(x, y, lower, upper, primary=None, type="l",
     newy2 = concatenate([y[0:i1], [y[i1]], [0] * (i2 - i1), [0], y[i2:]])
 
     # Generate the plot
+    plt.fill_between(newx, newy, newy2, color='#0066FF', alpha=0.7)
+
+    # Add Labels
     plt.xlabel(xlab)
     plt.ylabel(ylab)
     plt.title(main)
-    plt.fill_between(x, y, y2, facecolor='blue', alpha=0.5)
+
+    # Add Grid lines
+    plt.minorticks_on()
+    plt.grid(b=True, which='major', color='#666666', linestyle='-')
+    plt.grid(b=True, which='minor', color='#999999', linestyle='-', alpha=0.2)
+
+    # Display
     plt.show()
