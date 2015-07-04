@@ -72,6 +72,8 @@ __all__ = ["mean", "sd", "sort", "c", "nck", "choose", "npk", "factorial"]
 
 # norm functions
 from pyrpy.norm import *
+from pyrpy.binom import *
+from pyrpy.t import *
 
 import numpy as np
 from scipy.misc import comb
