@@ -1,10 +1,3 @@
-"""====================================================
-                    DESCRIPTION
-
-=======================================================
-"""
-__author__ = 'Ronny Restrepo'
-
 from scipy.stats import norm
 
 # TODO: Verify the outputs of these functions, make sure i implemented them

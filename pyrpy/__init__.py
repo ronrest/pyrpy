@@ -70,6 +70,9 @@ from __future__ import division, print_function, absolute_import
 __author__ = 'Ronny Restrepo'
 __all__ = ["mean", "sd", "sort", "c", "nck", "choose", "npk", "factorial"]
 
+# norm functions
+from pyrpy.norm import *
+
 import numpy as np
 from scipy.misc import comb
 from scipy.misc import factorial as spfactorial
