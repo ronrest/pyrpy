@@ -70,10 +70,11 @@ from __future__ import division, print_function, absolute_import
 __author__ = 'Ronny Restrepo'
 __all__ = ["mean", "sd", "sort", "c", "nck", "choose", "npk", "factorial"]
 
-# norm functions
-from pyrpy.norm import *
-from pyrpy.binom import *
-from pyrpy.t import *
+# selected functions from files
+from pyrpy.norm import cnorm, rnorm, qnorm, pnorm, dnorm
+from pyrpy.binom import cbinom, rbinom, qbinom, pbinom, dbinom
+from pyrpy.t import ct, rt, qt, pt, dt
+from pyrpy.plot_distribution import plot_distribution
 
 import numpy as np
 from scipy.misc import comb
