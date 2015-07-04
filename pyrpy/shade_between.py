@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+from numpy import concatenate
 
 def shade_between(x, y, lower, upper, primary=None, type="l",
                   shade_col="blue", main="", xlab="", ylab=""):
