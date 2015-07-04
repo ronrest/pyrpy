@@ -5,6 +5,7 @@
 """
 __author__ = 'Ronny Restrepo'
 from pyrpy.distributions import *
+
 import matplotlib.pyplot as plt
 
 # TODO: Create another function to show a normal curve/t curve of two samples
@@ -138,7 +139,3 @@ def plot_distribution(dist="normal", mean=None, sd=None, n=None, p=None,
      
     else:
         pass
-
-
-if __name__ == '__main__':
-    print("Plot convenience package")
