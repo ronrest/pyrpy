@@ -4,7 +4,7 @@
 =======================================================
 """
 __author__ = 'Ronny Restrepo'
-from pyRpy.distributions import *
+from pyrpy.distributions import *
 import matplotlib.pyplot as plt
 
 # TODO: Create another function to show a normal curve/t curve of two samples
