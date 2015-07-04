@@ -74,6 +74,9 @@ __all__ = ["mean", "sd", "sort", "c", "nck", "choose", "npk", "factorial"]
 from pyrpy.norm import cnorm, rnorm, qnorm, pnorm, dnorm
 from pyrpy.binom import cbinom, rbinom, qbinom, pbinom, dbinom
 from pyrpy.t import ct, rt, qt, pt, dt
+
+# Plots
+from pyrpy.plot import plot
 from pyrpy.plot_distribution import plot_distribution
 
 import numpy as np
