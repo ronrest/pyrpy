@@ -10,6 +10,7 @@ from pyrpy.binom import dbinom
 from pyrpy.t import qt, dt, ct
 from pyrpy.shade_between import shade_between
 
+from matplotlib import pyplot as plt
 
 # TODO: Create another function to show a normal curve/t curve of two samples
 #       on top of each other, along with confidence intervals, just so we can
@@ -128,7 +129,9 @@ def plot_distribution(dist="normal", mean=None, sd=None, n=None, p=None,
             title = "T Distribution with\n df={}".format(df)
 
         shade_between(x, y, lower=CI[0], upper=CI[1],
-                      shade_col="blue", main=title)
+                      shade_col="blue", main=title, primary=False)
+        if primary:
+            plt.show()
 
         #plt.plot(x, y)
         # plt.xticks(x)  # only show tick labels for actual values
