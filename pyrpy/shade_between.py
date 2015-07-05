@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 from numpy import concatenate
 
-def shade_between(x, y, lower, upper, primary=None, type="l",
+def shade_between(x, y, lower, upper, primary=True, type="l",
                   shade_col="blue", main="", xlab="", ylab=""):
     """
     Plots a graph, with a shaded region
@@ -47,4 +47,5 @@ def shade_between(x, y, lower, upper, primary=None, type="l",
     plt.grid(b=True, which='minor', color='#999999', linestyle='-', alpha=0.2)
 
     # Display
-    plt.show()
+    if primary:
+        plt.show()
