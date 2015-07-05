@@ -3,6 +3,7 @@ from pyrpy.plot_density import plot_density
 from pyrpy.plot_distribution import plot_distribution
 from pyrpy.mean import mean
 from pyrpy.sd import sd
+from matplotlib import pyplot as plt
 
 def plot_hypothesis(x, conf=0.95):
     """
@@ -20,6 +21,6 @@ def plot_hypothesis(x, conf=0.95):
     """
     # TODO: Make the two plots actually overlay on top of each other.
     SE = sd(x) / sqrt(len(x))
-
-    plot_distribution("t", mean=mean(x), sd=SE)
-    plot_density(x)
+    plot_distribution("t", df=len(x)-1, mean=mean(x), sd=SE, primary=False)
+    plot_density(x, primary=False)
+    plt.show()
