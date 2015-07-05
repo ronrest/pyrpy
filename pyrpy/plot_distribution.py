@@ -19,7 +19,7 @@ from pyrpy.shade_between import shade_between
 
 
 def plot_distribution(dist="normal", mean=None, sd=None, n=None, p=None,
-                      df=None, df2=None, rate=None, conf=0.95, res=100,
+                      df=None, df2=None, rate=None, conf=0.95, res=200,
                       returndf=False,
                       primary=True, plower=0.0001, pupper=0.9999):
     """
@@ -55,7 +55,7 @@ def plot_distribution(dist="normal", mean=None, sd=None, n=None, p=None,
       res     : integer. Resolution of the plot (measured as the number of
                 data points along the x axis)
                 Not implemented for Poisson distribution yet.
-                DEFAULT = 100 if using normal distribution
+                DEFAULT = 200 if using normal distribution
     returndf : should it return a dataframe of the x and y values?
                 DEFAULT = FALSE
     primary   : boolean. Whether to plot as primary plot using plot() or
@@ -105,7 +105,7 @@ def plot_distribution(dist="normal", mean=None, sd=None, n=None, p=None,
         x_min = qt(plower, df=df)
         x_max = qt(pupper, df=df)
 
-        x = linspace(x_min, x_max, 100)
+        x = linspace(x_min, x_max, res)
 
         # Calculate corresponding y values
         y = dt(x, df=df)
