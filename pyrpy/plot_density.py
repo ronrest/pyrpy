@@ -2,7 +2,7 @@ from matplotlib import pyplot as plt
 from numpy import linspace
 from scipy.stats import gaussian_kde
 
-def plot_density(x):
+def plot_density(x, primary=True):
     """
     Creates a density plot of the data.
 
@@ -26,5 +26,6 @@ def plot_density(x):
     plt.grid(b=True, which='minor', color='#999999', linestyle='-', alpha=0.2)
 
     # Render the plot
-    plt.show()
+    if primary:
+        plt.show()
 
