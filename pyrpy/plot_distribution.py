@@ -9,7 +9,7 @@ __author__ = 'Ronny Restrepo'
 from pyrpy.binom import dbinom
 from pyrpy.t import qt, dt, ct
 from pyrpy.shade_between import shade_between
-
+from matplotlib.pyplot import axvline as vline
 from matplotlib import pyplot as plt
 
 # TODO: Create another function to show a normal curve/t curve of two samples
@@ -130,6 +130,8 @@ def plot_distribution(dist="normal", mean=None, sd=None, n=None, p=None,
 
         shade_between(x, y, lower=CI[0], upper=CI[1],
                       shade_col="blue", main=title, primary=False)
+        vline(x=mean, color='#0033CC', alpha=0.9, linewidth=2.0)
+
         if primary:
             plt.show()
 
